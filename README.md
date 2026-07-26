@@ -1,49 +1,62 @@
 # 🚚 Logistics ETA Prediction System
 
-A machine learning-based web application that predicts delivery time for logistics orders using delivery, traffic, weather, and agent information. The project is built with XGBoost and deployed through a Streamlit interface for real-time predictions.
+A machine learning project that predicts the estimated delivery time of an order using factors such as delivery distance, traffic conditions, weather, vehicle type, and agent details. The project includes an end-to-end ML pipeline along with an interactive Streamlit web application for real-time predictions.
 
 ---
 
-## Features
+## 📌 Overview
 
-- Predicts delivery ETA using an XGBoost regression model
-- Data cleaning and feature engineering pipeline
+The objective of this project is to estimate delivery time as accurately as possible using historical delivery data. The workflow includes data preprocessing, feature engineering, model training using XGBoost, and deployment through a Streamlit interface.
+
+The application allows users to modify delivery parameters and instantly predict the estimated delivery time.
+
+---
+
+## ✨ Features
+
+- End-to-end machine learning pipeline
+- Data cleaning and preprocessing
+- Feature engineering using geographical and temporal information
+- XGBoost regression model for ETA prediction
 - Interactive Streamlit web application
-- Trained on over **43,000** delivery records
-- Model persistence using Joblib
-- Easy-to-use interface for testing different delivery scenarios
+- Saved trained model using Joblib
+- Simple and user-friendly interface for testing different delivery scenarios
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - Python
-- XGBoost
-- Scikit-learn
 - Pandas
 - NumPy
+- Scikit-learn
+- XGBoost
 - Streamlit
-- Joblib
 - Matplotlib
+- Joblib
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
-```
+```text
 Logistics-ETA-Predictor/
 │
 ├── app.py
 ├── requirements.txt
 ├── README.md
+├── .gitignore
 │
 ├── data/
 │   └── raw/
+│       └── delivery_data.csv
 │
 ├── models/
 │   └── eta_model.pkl
 │
 ├── results/
+│   ├── app.png
+│   └── metrics.txt
 │
 ├── src/
 │   ├── data_loader.py
@@ -57,73 +70,78 @@ Logistics-ETA-Predictor/
 
 ---
 
-## Dataset
+## 📊 Dataset
 
-Amazon Delivery Dataset
+**Dataset:** Amazon Delivery Dataset
 
 After preprocessing:
 
-- **43,594** training samples
-- **16** original features
-- Engineered features include:
-  - Delivery distance
-  - Pickup delay
-  - Order hour
-  - Day of week
-  - Month
+- Original records: **43,739**
+- Cleaned records used for training: **43,594**
+
+### Features Used
+
+- Agent Age
+- Agent Rating
+- Weather
+- Traffic
+- Vehicle Type
+- Delivery Area
+- Product Category
+- Delivery Distance
+- Pickup Delay
+- Order Hour
+- Day
+- Month
+- Weekday
 
 ---
 
-## Model Performance
+## 📈 Model Performance
 
-| Metric | Value |
-|--------|-------:|
-| MAE | **17.11 min** |
-| RMSE | **22.08 min** |
+| Metric | Score |
+|---------|-------|
+| MAE | **17.11 minutes** |
+| RMSE | **22.08 minutes** |
 | R² Score | **0.8146** |
 
 ---
 
-## Screenshots
+## 📸 Application Preview
 
-### Home Page
+![Application Screenshot](results/app.png)
 
-> Add `results/app.png`
-
-### Prediction
-
-> Add `results/prediction.png`
 
 ---
 
-## Installation
+## 🚀 Getting Started
 
-Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/kartikvwr/Logistics-ETA-Predictor.git
 ```
 
-Move into the project directory
+### Move into the project
 
 ```bash
 cd Logistics-ETA-Predictor
 ```
 
-Create a virtual environment
+### Create a virtual environment
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-Install dependencies
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application
+### Run the application
 
 ```bash
 streamlit run app.py
@@ -131,17 +149,17 @@ streamlit run app.py
 
 ---
 
-## Future Improvements
+## 💡 Future Improvements
 
+- Integrate live weather data
 - Route optimisation using map APIs
-- Live weather integration
-- Traffic prediction using real-time data
 - Hyperparameter tuning
-- Model deployment on cloud platforms
+- Cloud deployment
+- Real-time traffic integration
 
 ---
 
-## Author
+## 👨‍💻 Author
 
 **Kartik V W R**
 
